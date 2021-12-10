@@ -9,11 +9,18 @@
       "UnauthRoleName": "amplify-playground-dev-135344-unauthRole",
       "StackName": "amplify-playground-dev-135344",
       "StackId": "arn:aws:cloudformation:us-east-1:784475927326:stack/amplify-playground-dev-135344/3718cef0-59b8-11ec-aab6-0a492b04931b",
-      "AmplifyAppId": "dld2jphlh9z9i"
+      "AmplifyAppId": "dld2jphlh9z9i",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-playground-dev-135344-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
       "auth": {
         "playground025d94f0": {}
+      },
+      "function": {
+        "authTokenHandler": {
+          "deploymentBucketName": "amplify-playground-dev-135344-deployment",
+          "s3Key": "amplify-builds/authTokenHandler-722f68326e6d6d346f5a-build.zip"
+        }
       }
     }
   }

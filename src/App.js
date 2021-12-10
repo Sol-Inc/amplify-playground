@@ -42,6 +42,18 @@ const App = () => {
     }
   }
 
+  async function callAPI() {
+    try {
+      const response = await API.get('api4eab0951', '/foo', {
+        'queryStringParameters': {
+          'param': 'hello-world'
+        }
+      })
+      alert(JSON.stringify(response, null, 2))
+      setTodos(todos)
+    } catch (err) { console.log('error fetching todos') }
+  }
+
   return (
     <div style={styles.container}>
       <h2>Amplify Todos</h2>
@@ -58,6 +70,7 @@ const App = () => {
         placeholder="Description"
       />
       <button style={styles.button} onClick={addTodo}>Create Todo</button>
+      <button style={{...styles.button, backgroundColor: 'blue', marginTop: '16px'}} onClick={callAPI}>Call API</button>
       {
         todos.map((todo, index) => (
           <div key={todo.id ? todo.id : index} style={styles.todo}>

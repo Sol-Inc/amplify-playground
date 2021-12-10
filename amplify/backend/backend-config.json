@@ -14,6 +14,20 @@
           "additionalAuthenticationProviders": []
         }
       }
+    },
+    "api4eab0951": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "authTokenHandler",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ]
     }
   },
   "auth": {
@@ -40,6 +54,13 @@
           "EMAIL"
         ]
       }
+    }
+  },
+  "function": {
+    "authTokenHandler": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   }
 }
