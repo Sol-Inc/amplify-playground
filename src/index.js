@@ -4,6 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// configure Amplify on the client so that we can use it to interact with our backend services.
+import Amplify from "aws-amplify";
+import awsExports from "./aws-exports";
+Amplify.configure(awsExports);
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
