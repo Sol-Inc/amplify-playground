@@ -1,7 +1,7 @@
 /* src/App.js */
 import React, { useEffect, useState } from 'react'
 import { withAuthenticator } from '@aws-amplify/ui-react'
-import Amplify, { API, graphqlOperation } from 'aws-amplify'
+import Amplify, { API, Auth, graphqlOperation } from 'aws-amplify'
 import { createTodo } from './graphql/mutations'
 import { listTodos } from './graphql/queries'
 
@@ -44,12 +44,15 @@ const App = () => {
 
   async function callAPI() {
     try {
+      const user = await Auth.currentAuthenticatedUser()
       const response = await API.get('api4eab0951', '/foo', {
         'queryStringParameters': {
           'param': 'hello-world'
         }
       })
-      alert(JSON.stringify(response, null, 2))
+      console.log('user:', user)
+      console.log('response:', response);
+      alert(JSON.stringify(response))
       setTodos(todos)
     } catch (err) { console.log('error fetching todos') }
   }

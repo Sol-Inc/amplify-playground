@@ -19,7 +19,7 @@
       "function": {
         "authTokenHandler": {
           "deploymentBucketName": "amplify-playground-dev-135344-deployment",
-          "s3Key": "amplify-builds/authTokenHandler-722f68326e6d6d346f5a-build.zip"
+          "s3Key": "amplify-builds/authTokenHandler-4374417374724b364376-build.zip"
         }
       }
     }
